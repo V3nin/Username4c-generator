@@ -1,12 +1,10 @@
-# Username Generator with Custom ASCII Eagle
-# Entirely in Red
 # By x9hg // Central
 
 import random
 import pyperclip
 import pyautogui
 import time
-from colorama import Fore, Style, init
+from colorama import Fore, init
 import shutil
 
 init(autoreset=True)
@@ -95,8 +93,12 @@ if mode == "2":
 
 while True:
     if mode == "1":
-        # 3L-1C generation
-        username = ''.join(random.choices(letters, k=3)) + random.choice(digits)
+        # 3L-1C generation with digit at random position
+        chars = random.choices(letters, k=3)
+        digit = random.choice(digits)
+        pos = random.randint(0, 3)
+        chars.insert(pos, digit)
+        username = ''.join(chars)
     elif mode == "2":
         # 4C generation from precomputed list
         if i >= len(combos_4c):
@@ -117,4 +119,3 @@ while True:
 
     print(Fore.RED + center_text(f"Pasted: {username}"))
     time.sleep(pause_time)
-
