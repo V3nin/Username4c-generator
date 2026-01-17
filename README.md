@@ -31,7 +31,7 @@ This project creates short, clean, and unique usernames, combining selected lett
 This project requires the following Python packages:
 
 ```bash
-pip install -r devilrequirements.txt
+pip install -r devil-requirements.txt
 ```
 
 ### Usage
